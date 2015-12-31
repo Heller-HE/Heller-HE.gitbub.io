@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>排序算法 | 神一样的奇葩小屌丝</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="#算法描述
+##插入排序
+###直接插入排序(Insertion Sort) 直接插入排序算法描述是一种简单直观的排序算法。它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。插入排序在实现上，通常采用in-place排序（即只需用到O(1)的额外空间的排序），因而在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素提供插入空间。代码实现：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="排序算法">
+<meta property="og:url" content="http://heller-he.github.io/2015/12/31/算法排序/index.html">
+<meta property="og:site_name" content="神一样的奇葩小屌丝">
+<meta property="og:description" content="#算法描述
+##插入排序
+###直接插入排序(Insertion Sort) 直接插入排序算法描述是一种简单直观的排序算法。它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。插入排序在实现上，通常采用in-place排序（即只需用到O(1)的额外空间的排序），因而在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素提供插入空间。代码实现：">
+<meta property="og:image" content="http://upload.wikimedia.org/wikipedia/zh/math/d/8/c/d8c024cd57b9d73097c60c48f781cd31.png">
+<meta property="og:image" content="http://upload.wikimedia.org/wikipedia/zh/math/d/5/5/d5515cdef9cfe2aa418eb65d602b2030.png">
+<meta property="og:image" content="http://upload.wikimedia.org/wikipedia/zh/math/5/b/3/5b3cfd59e549efe019745bfe6a27bf83.png">
+<meta property="og:image" content="http://upload.wikimedia.org/wikipedia/zh/math/0/a/a/0aabb4a6644fed1a377f8d1ce7575442.png">
+<meta property="og:image" content="http://pic002.cnblogs.com/images/2012/426620/2012071709461823.jpg">
+<meta property="og:updated_time" content="2015-12-31T08:51:56.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="排序算法">
+<meta name="twitter:description" content="#算法描述
+##插入排序
+###直接插入排序(Insertion Sort) 直接插入排序算法描述是一种简单直观的排序算法。它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。插入排序在实现上，通常采用in-place排序（即只需用到O(1)的额外空间的排序），因而在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素提供插入空间。代码实现：">
+  
+    <link rel="alternative" href="/atom.xml" title="神一样的奇葩小屌丝" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="null" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">John Doe</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>標籤</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>關於</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="/#" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">John Doe</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="null" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">John Doe</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="/#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-算法排序" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/31/算法排序/" class="article-date">
+  	<time datetime="2015-12-31T08:56:05.000Z" itemprop="datePublished">2015-12-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      排序算法
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#<strong>算法描述</strong></p>
+<p>##插入排序</p>
+<p>###直接插入排序(Insertion Sort) <br><br>直接插入排序算法描述是一种简单直观的排序算法。它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。插入排序在实现上，通常采用in-place排序（即只需用到O(1)的额外空间的排序），因而在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素提供插入空间。<br>代码实现：<br><figure class="highlight"><figcaption><span><stdio.h></stdio.h></span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#include &#60;stdlib.h&#62;&#10;void swap(int *p1, int *p2)&#10;&#123;&#10;      int temp;&#10;      temp=*p1;&#10;      *p1=*p2;&#10;      *p2=temp;&#10;&#125;&#10;void insertSort(int *a,int len)&#10;&#123;&#10;      int i,j;&#10;      for(i=0;i&#60;len;i++)&#10;      &#123;&#10;          for(j=i+1;j&#62;=1;j--)&#10;          &#123;&#10;              if(a[j]&#60;a[j-1])&#10;                   swap(&#38;a[j],&#38;a[j-1]);              &#10;          &#125;&#10;      &#125;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>###希尔排序<br>也称<strong>递减增量排序算法</strong>，是插入排序的一种高速而稳定的改进版本。它的基本思想是先取一个小于n的整数d1作为第一个增量，把文件的全部记录分成d1个组。所有距离为dl的倍数的记录放在同一个组中。先在各组内进行直接插人排序；然后，取第二个增量d2<d1重复上述的分组和排序，直至所取的增量dt=1(dt<dt-l<…<d2<d1)，即所有记录放在同一组中进行直接插入排序为止。该方法实质上是一种分组插入方法。 代码实现：="" <figure="" class="highlight"><figcaption><span><stdio.h></stdio.h></span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#include &#60;stdlib.h&#62;&#10;&#10;void swap(int *p1, int *p2) &#123;&#10;      int temp;&#10;      temp = *p1;&#10;      *p1 = *p2;&#10;      *p2 = temp;&#10;&#125;&#10;void shell(int *a, int d, int len) &#123;&#10;       int i, j;&#10;       &#10;       for (i = d - 1; i &#60; len; i++) &#123;   &#10;           for (j = i + d; j &#62;= i &#38;&#38; j &#60; len; j--) &#123;&#10;                 if (a[j] &#60; a[j-d]) &#123;&#10;                      swap(&#38;a[j], &#38;a[j-d]);&#10;                 &#125;&#10;            &#125; &#10;        &#125;&#10;&#125;&#10;void shellSort(int *a, int d, int len) &#123;&#10;       while (d &#62;= 1) &#123;&#10;            shell(a, d, len);&#10;            d = d / 2;&#10;       &#125;&#10;&#125;</span><br></pre></td></tr></table></d1重复上述的分组和排序，直至所取的增量dt=1(dt<dt-l<…<d2<d1)，即所有记录放在同一组中进行直接插入排序为止。该方法实质上是一种分组插入方法。></p>
+<p>##<strong>交换排序</strong></p>
+<h3 id="u5192_u6CE1_u6392_u5E8F_uFF08Bubble_Sort_uFF09"><a href="#u5192_u6CE1_u6392_u5E8F_uFF08Bubble_Sort_uFF09" class="headerlink" title="冒泡排序（Bubble Sort）"></a>冒泡排序（Bubble Sort）<br></h3><p>是一种简单的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。</p>
+<p>代码实现：(swap函数同前 以后同)<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="keyword">int</span> *a,<span class="keyword">int</span> len)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i,j,change;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">        &#123;</span><br><span class="line">               change=<span class="number">0</span>;</span><br><span class="line">               <span class="keyword">for</span>(j=len-<span class="number">1</span>;j&gt;i;j--)</span><br><span class="line">               &#123;</span><br><span class="line">                        <span class="keyword">if</span>(a[j]&lt;a[j-<span class="number">1</span>])</span><br><span class="line">                        &#123;</span><br><span class="line">                                change=<span class="number">1</span>;</span><br><span class="line">                                swap(&amp;a[j],&amp;a[j-<span class="number">1</span>]);</span><br><span class="line">                         &#125;</span><br><span class="line">               &#125; </span><br><span class="line">               <span class="keyword">if</span>(!change)</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>###快速排序<br>是由东尼·霍尔所发展的一种排序算法   基本思想是：通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。<br>代码实现：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">partition</span><span class="params">(<span class="keyword">int</span> *a ,<span class="keyword">int</span> s, <span class="keyword">int</span> e)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> roll=a[s], i, j;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (i=s+<span class="number">1</span>,j=i ;i&lt;=e; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (a[i] &lt; roll)</span><br><span class="line">        &#123;</span><br><span class="line">            swap(&amp;a[i],&amp;a[j]);</span><br><span class="line">            j++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    swap(&amp;a[s],&amp;a[j-<span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">return</span> j-<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span> *a, <span class="keyword">int</span> start,<span class="keyword">int</span> end)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(start&lt;=end)</span><br><span class="line">    &#123;</span><br><span class="line">         <span class="keyword">int</span> split=partition(a,start,end);</span><br><span class="line">         quickSort(a,start,split-<span class="number">1</span>);</span><br><span class="line">         quickSort(a,split+<span class="number">1</span>,end);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>##<strong>选择排序</strong></p>
+<p>###直接选择排序(Selection sort)<br>是一种简单直观的排序算法。它的工作原理如下。首先在未排序序列中找到最小元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小元素，然后放到排序序列末尾(目前已被排序的序列)。以此类推，直到所有元素均排序完毕。<br>代码实现：<br><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">void selectSort(<span class="built_in">int</span> *a, <span class="built_in">int</span> len)</span><br><span class="line">&#123;</span><br><span class="line">     <span class="built_in">int</span> i,j,<span class="built_in">min</span>,mark<span class="comment">;</span></span><br><span class="line">   </span><br><span class="line">     <span class="keyword">for</span>(i=<span class="number">0</span><span class="comment">;i&lt;len;i++)</span></span><br><span class="line">     &#123;</span><br><span class="line">        <span class="built_in">min</span>=a[i]<span class="comment">;</span></span><br><span class="line">        <span class="keyword">for</span>(j=i+<span class="number">1</span><span class="comment">;j&lt;len;j++)</span></span><br><span class="line">        &#123;</span><br><span class="line">             <span class="keyword">if</span>(a[j]&lt;<span class="built_in">min</span>)</span><br><span class="line">             &#123;</span><br><span class="line">                    <span class="built_in">min</span>=a[j]<span class="comment">;</span></span><br><span class="line">                    mark=j</span><br><span class="line">             &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">min</span>!=a[i])</span><br><span class="line">             swap(&amp;a[i],&amp;a[mark])<span class="comment">;</span></span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>###堆排序（Heapsort）<br>是指利用堆这种数据结构所设计的一种排序算法。堆是一个近似完全二叉树的结构，并同时满足堆性质：即子结点的键值或索引总是小于（或者大于）它的父节点<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">shift</span><span class="params">(<span class="keyword">int</span> *a,<span class="keyword">int</span> r,<span class="keyword">int</span> len)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">     <span class="keyword">int</span> j,maxid;</span><br><span class="line">     <span class="keyword">for</span>(j=r;j&lt;=len/<span class="number">2</span>;)</span><br><span class="line">     &#123;</span><br><span class="line">         maxid=j;</span><br><span class="line">         <span class="keyword">if</span>(<span class="number">2</span>*j&lt;len &amp;&amp; a[<span class="number">2</span>*j]&gt;a[j])</span><br><span class="line">              maxid=<span class="number">2</span>*j;</span><br><span class="line"></span><br><span class="line">         <span class="keyword">if</span>(<span class="number">2</span>*j+<span class="number">1</span>&lt;len &amp;&amp; a[<span class="number">2</span>*j+<span class="number">1</span>]&gt;a[maxid])</span><br><span class="line">              maxid=<span class="number">2</span>*j+<span class="number">1</span>;</span><br><span class="line">         </span><br><span class="line">         <span class="keyword">if</span>(maxid!=j)</span><br><span class="line">         &#123;</span><br><span class="line">              swap(&amp;a[maxid],&amp;a[j]);</span><br><span class="line">         &#125;</span><br><span class="line">     </span><br><span class="line">     &#125;</span><br><span class="line">     </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">buildHeap</span><span class="params">(<span class="keyword">int</span> *a, <span class="keyword">int</span> len)</span>   <span class="comment">//为便宜计算 a的下标从1开始 构建大顶堆</span></span><br><span class="line"></span>&#123;</span><br><span class="line">     <span class="keyword">int</span> i;</span><br><span class="line">     <span class="keyword">for</span>(i=len/<span class="number">2</span>;i&gt;<span class="number">0</span>;i--)</span><br><span class="line">         shift(a,i,len);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">heapSort</span><span class="params">(<span class="keyword">int</span> *a, <span class="keyword">int</span> len)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">     <span class="keyword">int</span> clen;</span><br><span class="line">     </span><br><span class="line">     buildHeap(a,len);</span><br><span class="line">     swap(&amp;a[<span class="number">1</span>],&amp;a[len]);</span><br><span class="line">     <span class="keyword">for</span>(clen=len-<span class="number">1</span>;clen&gt;<span class="number">0</span>;clen--)</span><br><span class="line">     &#123;</span><br><span class="line">          shift(a,<span class="number">1</span>,clen);</span><br><span class="line">          swap(&amp;a[<span class="number">1</span>],&amp;a[clen]);</span><br><span class="line">     &#125;</span><br><span class="line">     </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>##<strong>归并排序</strong></p>
+<p>###归并排序（Merge sort）<br>是建立在归并操作上的一种有效的排序算法。该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。</p>
+<p>算法描述</p>
+<p>归并操作的过程如下：</p>
+<ol>
+<li>申请空间，使其大小为两个已经排序序列之和，该空间用来存放合并后的序列</li>
+<li>设定两个指针，最初位置分别为两个已经排序序列的起始位置</li>
+<li>比较两个指针所指向的元素，选择相对小的元素放入到合并空间，并移动指针到下一位置</li>
+<li>重复步骤3直到某一指针达到序列尾</li>
+<li>将另一序列剩下的所有元素直接复制到合并序列尾<br>代码实现：<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">void merge(<span class="built_in">int</span> *a,<span class="built_in">int</span> start,<span class="built_in">int</span> <span class="built_in">mid</span>,<span class="built_in">int</span> <span class="keyword">end</span>)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">     <span class="keyword">if</span>(start&gt;<span class="built_in">mid</span> || <span class="built_in">mid</span> &gt;<span class="keyword">end</span> ) return;</span><br><span class="line"></span><br><span class="line">     <span class="built_in">int</span> i=start,j=<span class="built_in">mid</span>+<span class="number">1</span>,k=<span class="number">0</span>;</span><br><span class="line">     <span class="built_in">int</span> *L=(<span class="built_in">int</span> *)malloc((<span class="keyword">end</span>-start+<span class="number">1</span>)*sizeof(<span class="built_in">int</span>));</span><br><span class="line"> </span><br><span class="line">     <span class="keyword">while</span>(i&lt;=<span class="built_in">mid</span> &amp;&amp; j&lt;=<span class="keyword">end</span>)</span><br><span class="line">     &#123;</span><br><span class="line">          <span class="keyword">if</span>(a[i]&lt;a[j])</span><br><span class="line">          &#123;</span><br><span class="line">              L[k++]=a[i++];</span><br><span class="line">          &#125;<span class="keyword">else</span></span><br><span class="line">          &#123;</span><br><span class="line">              L[k++]=a[j++];</span><br><span class="line">          &#125;</span><br><span class="line">     &#125;</span><br><span class="line">       </span><br><span class="line">     <span class="keyword">while</span>(i&lt;=<span class="built_in">mid</span>)</span><br><span class="line">          L[k++]=a[i++];</span><br><span class="line"></span><br><span class="line">     <span class="keyword">while</span>(j&lt;=<span class="keyword">end</span>)</span><br><span class="line">          L[k++]=a[j++];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(i=start,j=<span class="number">0</span>;i&lt;=<span class="keyword">end</span>;i++,j++)</span><br><span class="line">    &#123;</span><br><span class="line">          a[i]=L[j];</span><br><span class="line">    &#125;</span><br><span class="line">      </span><br><span class="line">    free(L);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void mergeSort(<span class="built_in">int</span> *a, <span class="built_in">int</span> start,<span class="built_in">int</span> <span class="keyword">end</span>)</span><br><span class="line">&#123;</span><br><span class="line">     <span class="keyword">if</span>(start&lt;<span class="keyword">end</span>)</span><br><span class="line">     &#123;</span><br><span class="line">          <span class="built_in">int</span> <span class="built_in">mid</span>=(start+<span class="keyword">end</span>)/<span class="number">2</span>;</span><br><span class="line">          mergeSort(a,start,<span class="built_in">mid</span>);</span><br><span class="line">          mergeSort(a,<span class="built_in">mid</span>+<span class="number">1</span>,<span class="keyword">end</span>);</span><br><span class="line">          merge(a,start,<span class="built_in">mid</span>,<span class="keyword">end</span>);</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>##<strong>基数排序</strong></p>
+<p>###基数排序(Radix sort)<br>是一种非比较型整数排序算法，其原理是将整数按位数切割成不同的数字，然后按每个位数分别比较。由于整数也可以表达字符串（比如名字或日期）和特定格式的浮点数，所以基数排序也不是只能使用于整数。</p>
+<p>算法实现（未验证正确性）：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> DNode</span><br><span class="line">&#123;</span><br><span class="line">     <span class="keyword">int</span> data;</span><br><span class="line">     DNode *next;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">struct</span> Table</span><br><span class="line">&#123;</span><br><span class="line">     <span class="keyword">int</span> id;</span><br><span class="line">     DNode *fisrt;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">digit</span><span class="params">(<span class="keyword">int</span> num,<span class="keyword">int</span> loc)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;loc;i++)</span><br><span class="line">           num/=<span class="number">10</span>;</span><br><span class="line">     <span class="keyword">int</span> res=num%<span class="number">10</span>;</span><br><span class="line">     <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">maxCount</span><span class="params">(<span class="keyword">int</span> *a,<span class="keyword">int</span> len)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> max=<span class="number">0</span>,n,num;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">    &#123; </span><br><span class="line">          n=<span class="number">0</span>;</span><br><span class="line">          num=a[i];</span><br><span class="line">          <span class="keyword">while</span>(num)</span><br><span class="line">          &#123;</span><br><span class="line">             num/=<span class="number">10</span>;</span><br><span class="line">             n++;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">if</span>(n&gt;max)  max=n;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> max;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">radixSort</span><span class="params">(<span class="keyword">int</span> *a,<span class="keyword">int</span> len)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">     </span><br><span class="line">     <span class="keyword">int</span> maxloc=maxcount(a,len);</span><br><span class="line">     DNode *ptemp;</span><br><span class="line">     Table *t=(Table *)<span class="built_in">malloc</span>(<span class="number">10</span> * <span class="keyword">sizeof</span>(Table));</span><br><span class="line"></span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)</span><br><span class="line">     &#123;</span><br><span class="line">            t[i]-&gt;id=i;</span><br><span class="line">            t[i]-&gt;first=<span class="literal">NULL</span>;</span><br><span class="line">     &#125; </span><br><span class="line"></span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;maxcount;j++)</span><br><span class="line">     &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;len;k++)</span><br><span class="line">            &#123;</span><br><span class="line">                   <span class="keyword">int</span> idm=digit(a[k],j);</span><br><span class="line">                   DNode *p=t[idm]-&gt;first;</span><br><span class="line">                   <span class="keyword">while</span>(pt-&gt;next!=<span class="literal">NULL</span>)  p=p-&gt;next;</span><br><span class="line">                   DNode *d=(DNode *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(DNode));</span><br><span class="line">                   d-&gt;data=a[k];</span><br><span class="line">                   d-&gt;next=p-&gt;next;</span><br><span class="line">                   p-&gt;next=d;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>,k=<span class="number">0</span>;i&lt;=<span class="number">9</span>;i++)</span><br><span class="line">            &#123;</span><br><span class="line">                    <span class="keyword">while</span>(t[i]-&gt;first!=<span class="literal">NULL</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                         a[k--]=t[i]-&gt;first-&gt;data;</span><br><span class="line">                         ptemp=t[i]-&gt;first;</span><br><span class="line">                         t[i]-&gt;first=t[i]-&gt;first-&gt;next;</span><br><span class="line">                         <span class="built_in">free</span>(ptemp);</span><br><span class="line">                    &#125;</span><br><span class="line">            &#125;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>#<strong>算法复杂度</strong></p>
+<p>##插入排序</p>
+<p>###直接插入排序<br>如果目标是把n个元素的序列升序排列，那么采用直接插入排序存在最好情况和最坏情况。最好情况就是，序列已经是升序排列了，在这种情况下，需要进行的比较操作需(n-1)次即可。最坏情况就是，序列是降序排列，那么此时需要进行的比较共有n(n-1)/2次。直接插入排序的赋值操作是比较操作的次数减去(n-1)次。平均来说直接插入排序算法复杂度为O(n2)。因而，直接插入排序不适合对于数据量比较大的排序应用。但是，如果需要排序的数据量很小，例如，量级小于千，那么直接插入排序还是一个不错的选择。 插入排序在工业级库中也有着广泛的应用，在STL的sort算法和stdlib的qsort算法中，都将插入排序作为快速排序的补充，用于少量元素的排序（通常为8个或以下）。</p>
+<p>##<strong>希尔排序</strong></p>
+<p>###希尔排序<br>是基于插入排序的一种算法， 在此算法基础之上增加了一个新的特性，提高了效率。希尔排序的时间复杂度为 O(N<em>(logN)2)， 没有快速排序算法快<br>O(N</em>(logN))，因此中等大小规模表现良好，对规模非常大的数据排序不是最优选择。但是比O(N2）复杂度的算法快得多。并且希尔排序非常容易实现，算法代码短而简单。 此外，希尔算法在最坏的情况下和平均情况下执行效率相差不是很多，与此同时快速排序在最坏 的情况下执行的效率会非常差。专家们提倡，几乎任何排序工作在开始时都可以用希尔排序，若在实际使用中证明它不够快， 再改成快速排序这样更高级的排序算法.希尔排序是按照不同步长对元素进行插入排序，当刚开始元素很无序的时候，步长最大，所以插入排序的元素个数很少，速度很快；当元素基本有序了，步长很小，插入排序对于有序的序列效率很高。所以，希尔排序的时间复杂度会比o(n^2)好一些。由于多次插入排序，我们知道一次插入排序是稳定的，不会改变相同元素的相对顺序，但在不同的插入排序过程中，相同的元素可能在各自的插入排序中移动，最后其稳定性就会被打乱，所以shell排序是不稳定的</p>
+<p>##<strong>冒泡排序</strong></p>
+<p>###时间复杂度为O（n^2）<br>虽然不及堆排序、快速排序的O（nlogn，底数为2），但是有两个优点：<br>1.“编程复杂度”很低，很容易写出代码；<br>2.具有稳定性。其中若记录序列的初始状态为”正序”，则冒泡排序过程只需进行一趟排序，在排序过程中只需进行n-1次比较，且不移动记录；反之，若记录序列的初始状态为”逆序”，则需进行n(n-1）/2次比较和记录移动。因此泡排序总的时间复杂度为O(n*n)。</p>
+<p>##<strong>快速排序 </strong><br>在最好的情况，每次我们执行一次分割，我们会把一个数列分为两个几近相等的片段。这个意思就是每次递回调用处理一半大小的数列。因此，在到达大小为一的数列前，我们只要作 log n 次巢状的调用。这个意思就是调用树的深度是O(log n)。但是在同一阶层的两个程序调用中，不会处理到原来数列的相同部份；因此，程序调用的每一阶层总共全部仅需要O(n)的时间（每个调用有某些共同的额外耗费，但是因为在每一阶层仅仅只有O(n)个调用，这些被归纳在O(n)系数中）。结果是这个算法仅需使用O(n log n)时间。<br>另外一个方法是为T(n)设立一个递回关系式，也就是需要排序大小为n的数列所需要的时间。在最好的情况下，因为一个单独的快速排序调用牵涉了O(n)的工作，加上对n/2大小之数列的两个递回调用，这个关系式可以是：T(n) = O(n) + 2T(n/2)解决这种关系式型态的标准数学归纳法技巧告诉我们T(n) = O(n log n)。事实上，并不需要把数列如此精确地分割；即使如果每个基准值将元素分开为 99% 在一边和 1% 在另一边，调用的深度仍然限制在 100log n，所以全部执行时间依然是O(n log n)。然而，在最坏的情况是，两子数列拥有大各为 1 和 n-1，且调用树（call tree）变成为一个 n 个巢状（nested）呼叫的线性连串（chain）。第 i 次呼叫作了O(n-i)的工作量，且<img src="http://upload.wikimedia.org/wikipedia/zh/math/d/8/c/d8c024cd57b9d73097c60c48f781cd31.png" alt="">递回关系式为：T(n) = O(n) + T(1) + T(n - 1) = O(n) + T(n - 1)<br>这与插入排序和选择排序有相同的关系式，以及它被解为T(n) = O(n2)。讨论平均复杂度情况下，即使如果我们无法随机地选择基准数值，对于它的输入之所有可能排列，快速排序仍然只需要O(n log n)时间。因为这个平均是简单地将输入之所有可能排列的时间加总起来，除以n这个因子，相当于从输入之中选择一个随机的排列。当我们这样作，基准值本质上就是随机的，导致这个算法与乱数快速排序有一样的执行时间。更精确地说，对于输入顺序之所有排列情形的平均比较次数，可以借由解出这个递回关系式可以精确地算出来。<img src="http://upload.wikimedia.org/wikipedia/zh/math/d/5/5/d5515cdef9cfe2aa418eb65d602b2030.png" alt="">在这里，n-1 是分割所使用的比较次数。因为基准值是相当均匀地落在排列好的数列次序之任何地方，总和就是所有可能分割的平均。<br>这个意思是，平均上快速排序比理想的比较次数，也就是最好情况下，只大约比较糟39%。这意味着，它比最坏情况较接近最好情况。这个快速的平均执行时间，是快速排序比其他排序算法有实际的优势之另一个原因。讨论空间复杂度时 被快速排序所使用的空间，依照使用的版本而定。使用原地（in-place）分割的快速排序版本，在任何递回呼叫前，仅会使用固定的額外空間。然而，如果需要产生O(log n)巢状递回呼叫，它需要在他们每一个储存一个固定数量的资讯。因为最好的情况最多需要O(log n)次的巢状递回呼叫，所以它需要O(log n)的空间。最坏情况下需要O(n)次巢状递回呼叫，因此需要O(n)的空间。然而我们在这里省略一些小的细节。如果我们考虑排序任意很长的数列，我们必须要记住我们的变量像是left和right，不再被认为是占据固定的空间；也需要O(log n)对原来一个n项的数列作索引。因为我们在每一个堆栈框架中都有像这些的变量，实际上快速排序在最好跟平均的情况下，需要O(log2 n)空间的位元数，以及最坏情况下O(n log n)的空间。然而，这并不会太可怕，因为如果一个数列大部份都是不同的元素，那么数列本身也会占据O(n log n)的空间字节。非原地版本的快速排序，在它的任何递回呼叫前需要使用O(n)空间。在最好的情况下，它的空间仍然限制在O(n)，因为递回的每一阶中，使用与上一次所使用最多空间的一半，且<img src="http://upload.wikimedia.org/wikipedia/zh/math/5/b/3/5b3cfd59e549efe019745bfe6a27bf83.png" alt="">它的最坏情况是很恐怖的，需要<img src="http://upload.wikimedia.org/wikipedia/zh/math/0/a/a/0aabb4a6644fed1a377f8d1ce7575442.png" alt="">空间，远比数列本身还多。如果这些数列元素本身自己不是固定的大小，这个问题会变得更大；举例来说，如果数列元素的大部份都是不同的，每一个将会需要大约O(log n)为原来储存，导致最好情况是O(n log n)和最坏情况是O(n2 log n)的空间需求。</p>
+<p>##<strong>直接选择排序</strong><br>选择排序的交换操作介于0和(n-1)次之间。选择排序的比较操作为n(n-1)/2次之间。选择排序的赋值操作介于0和3(n-1)次之间。比较次数O(n^2),比较次数与关键字的初始状态无关，总的比较次数N=(n-1)+(n-2)+…+1=n*(n-1)/2。 交换次数O(n),最好情况是，已经有序，交换0次；最坏情况是，逆序，交换n-1次。 交换次数比冒泡排序少多了，由于交换所需CPU时间比比较所需的CPU时间多，n值较小时，选择排序比冒泡排序快。</p>
+<p>##<strong>堆排序</strong><br>堆排序的平均时间复杂度为Ｏ(nlogn)，空间复杂度为Ｏ(1)。<br>由于它在直接选择排序的基础上利用了比较结果形成。效率提高很大。它完成排序的总比较次数为Ｏ(nlog2n)。它是对数据的有序性不敏感的一种算法。但堆排序将需要做两个步骤：－是建堆，二是排序（调整堆）。所以一般在小规模的序列中不合适，但对于较大的序列，将表现出优越的性能。</p>
+<p>##<strong>归并排序</strong><br>归并排序是一种非就地排序，将需要与待排序序列一样多的辅助空间。在使用它对两个己有序的序列归并，将有无比的优势。其时间复杂度无论是在最好情况下还是在最坏情况下均是O(nlog2n)。对数据的有序性不敏感。若数据节点数据量大，那将不适合。</p>
+<p>##<strong>基数排序</strong><br>基数排序的时间复杂度是 O(k·n)，其中n是排序元素个数，k是数字位数。注意这不是说这个时间复杂度一定优于O(n·log(n))，因为k的大小一般会受到 n 的影响。 以排序n个不同整数来举例，假定这些整数以B为底，这样每位数都有B个不同的数字，k就一定不小于logB(n)。由于有B个不同的数字，所以就需要B个不同的桶，在每一轮比较的时候都需要平均n·log2(B) 次比较来把整数放到合适的桶中去，所以就有：k 大于或等于 logB(n)每一轮(平均)需要 n·log2(B) 次比较所以，基数排序的平均时间T就是：T ≥ logB(n)·n·log2(B) = log2(n)·logB(2)·n·log2(B) = log2(n)·n·logB(2)·log2(B) = n·log2(n)所以和比较排序相似，基数排序需要的比较次数：T ≥ n·log2(n)。 故其时间复杂度为 Ω(n·log2(n)) = Ω(n·log n) 。</p>
+<p>#<strong>不同条件下，排序方法的选择</strong><br>(1)若n较小(如n≤50)，可采用直接插入或直接选择排序。     　</p>
+<p>当记录规模较小时，直接插入排序较好；否则因为直接选择移动的记录数少于直接插入，应选直接选择排序为宜。</p>
+<p>(2)若文件初始状态基本有序(指正序)，则应选用直接插入、冒泡或随机的快速排序为宜；</p>
+<p>(3)若n较大，则应采用时间复杂度为O(nlgn)的排序方法：快速排序、堆排序或归并排序。     　</p>
+<p>快速排序是目前基于比较的内部排序中被认为是最好的方法，当待排序的关键字是随机分布时，快速排序的平均时间最短；     　</p>
+<p>堆排序所需的辅助空间少于快速排序，并且不会出现快速排序可能出现的最坏情况。这两种排序都是不稳定的。     　</p>
+<p>若要求排序稳定，则可选用归并排序。但本章介绍的从单个记录起进行两两归并的  排序算法并不值得提倡，通常可以将它和直接插入排序结合在一起使用。先利用直接插入排序求得较长的有序子文件，然后再两两归并之。因为直接插入排序是稳定的，所以改进后的归并排序仍是稳定的。</p>
+<p>(4)在基于比较的排序方法中，每次比较两个关键字的大小之后，仅仅出现两种可能的转移，因此可以用一棵二叉树来描述比较判定过程。     　</p>
+<p>当文件的n个关键字随机分布时，任何借助于”比较”的排序算法，至少需要O(nlgn)的时间。     　</p>
+<p>箱排序和基数排序只需一步就会引起m种可能的转移，即把一个记录装入m个箱子之一，因此在一般情况下，箱排序和基数排序可能在O(n)时间内完成对n个记录的排序。但是，箱排序和基数排序只适用于像字符串和整数这类有明显结构特征的关键字，而当关键字的取值范围属于某个无穷集合(例如实数型关键字)时，无法使用箱排序和基数排序，这时只有借助于”比较”的方法来排序。     　</p>
+<p>若n很大，记录的关键字位数较少且可以分解时，采用基数排序较好。虽然桶排序对关键字的结构无要求，但它也只有在关键字是随机分布时才能使平均时间达到线性阶，否则为平方阶。同时要注意，箱、桶、基数这三种分配排序均假定了关键字若为数字时，则其值均是非负的，否则将其映射到箱(桶)号时，又要增加相应的时间。</p>
+<p>(5)有的语言(如Fortran，Cobol或Basic等)没有提供指针及递归，导致实现归并、快速(它们用递归实现较简单)和基数(使用了指针)等排序算法变得复杂。此时可考虑用其它排序。</p>
+<p>(6)本章给出的排序算法，输人数据均是存储在一个向量中。当记录的规模较大时，为避免耗费大量的时间去移动记录，可以用链表作为存储结构。譬如插入排序、归并排序、基数排序都易于在链表上实现，使之减少记录的移动次数。但有的排序方法，如快速排序和堆排序，在链表上却难于实现，在这种情况下，可以提取关键字建立索引表，然后对索引表进行排序。然而更为简单的方法是：引人一个整型向量t作为辅助表，排序前令t[i]=i(0≤i&lt;n)，若排序算法中要求交换R[i]和R[j]，则只需交换t[i]和t[j]即可；排序结束后，向量t就指示了记录之间的顺序关系：        </p>
+<p>R[t[0]].key≤R[t[1]].key≤…≤R[t[n-1]].key  </p>
+<p>若要求最终结果是：       </p>
+<p>R[0].key≤R[1].key≤…≤R[n-1].key</p>
+<p>则可以在排序结束后，再按辅助表所规定的次序重排各记录，完成这种重排的时间是O(n)。</p>
+<p>#<strong>各排序算法时间复杂度和空间复杂度</strong><br><img src="http://pic002.cnblogs.com/images/2012/426620/2012071709461823.jpg" alt=""></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/12/31/SublimeText/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Sublime Text 常用插件
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/12/31/recommendersystems/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">推荐系统概述</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="算法排序" data-title="排序算法" data-url="http://heller-he.github.io/2015/12/31/算法排序/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 John Doe
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

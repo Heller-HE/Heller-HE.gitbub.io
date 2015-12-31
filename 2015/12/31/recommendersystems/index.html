@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>推荐系统概述 | 神一样的奇葩小屌丝</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="推荐系统（recommender systems）是利用信息过滤技术向用户推荐其可能感兴趣的信息。dddddd推荐系统是有别于信息分类和信息搜索的信息处理方式。信息分类是有序的按照时间/主题/类别/用户/任务等方式组织结构化信息，浏览分类信息可以帮助用户理解信息之间的组织方式，但是这种信息的呈现方式是基于用户已知目标信息的所属类别，用户认知事物偏向于模糊无序，难以从有序的信息中发现未知并感兴趣的信">
+<meta property="og:type" content="article">
+<meta property="og:title" content="推荐系统概述">
+<meta property="og:url" content="http://heller-he.github.io/2015/12/31/recommendersystems/index.html">
+<meta property="og:site_name" content="神一样的奇葩小屌丝">
+<meta property="og:description" content="推荐系统（recommender systems）是利用信息过滤技术向用户推荐其可能感兴趣的信息。dddddd推荐系统是有别于信息分类和信息搜索的信息处理方式。信息分类是有序的按照时间/主题/类别/用户/任务等方式组织结构化信息，浏览分类信息可以帮助用户理解信息之间的组织方式，但是这种信息的呈现方式是基于用户已知目标信息的所属类别，用户认知事物偏向于模糊无序，难以从有序的信息中发现未知并感兴趣的信">
+<meta property="og:image" content="http://woshipm.com/images/20120517/f751_5074095784_840a635d8e_b.jpg">
+<meta property="og:image" content="http://woshipm.com/images/20120517/4049_5073498651_625354fdd9_b.jpg">
+<meta property="og:image" content="http://woshipm.com/images/20120517/197f_5083289860_1ea54f8d46_b.jpg">
+<meta property="og:image" content="http://woshipm.com/images/20120517/9e16_5083289104_7e8b0d7070_b.jpg">
+<meta property="og:updated_time" content="2015-12-31T08:51:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="推荐系统概述">
+<meta name="twitter:description" content="推荐系统（recommender systems）是利用信息过滤技术向用户推荐其可能感兴趣的信息。dddddd推荐系统是有别于信息分类和信息搜索的信息处理方式。信息分类是有序的按照时间/主题/类别/用户/任务等方式组织结构化信息，浏览分类信息可以帮助用户理解信息之间的组织方式，但是这种信息的呈现方式是基于用户已知目标信息的所属类别，用户认知事物偏向于模糊无序，难以从有序的信息中发现未知并感兴趣的信">
+  
+    <link rel="alternative" href="/atom.xml" title="神一样的奇葩小屌丝" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="null" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">John Doe</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>標籤</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>關於</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="/#" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">John Doe</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="null" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">John Doe</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="/#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-recommendersystems" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/31/recommendersystems/" class="article-date">
+  	<time datetime="2015-12-31T08:56:05.000Z" itemprop="datePublished">2015-12-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      推荐系统概述
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>推荐系统<strong>（recommender systems）</strong>是利用信息过滤技术向用户推荐其可能感兴趣的信息。dddddd推荐系统是有别于信息分类和信息搜索的信息处理方式。<br><img src="http://woshipm.com/images/20120517/f751_5074095784_840a635d8e_b.jpg" alt=""><br>信息分类是有序的按照时间/主题/类别/用户/任务等方式组织结构化信息，浏览分类信息可以帮助用户理解信息之间的组织方式，但是这种信息的呈现方式是基于用户已知目标信息的所属类别，用户认知事物偏向于模糊无序，难以从有序的信息中发现未知并感兴趣的信息。<br><img src="http://woshipm.com/images/20120517/4049_5073498651_625354fdd9_b.jpg" alt=""><br>信息搜索是根据和群体行为相关的权重排序信息，带有任务的用户寄希望能快速搜索到感兴趣的内容之后再深入阅读，再带着新的任务继续搜索，而现实的情形是个体用户不得不调整关键词反复搜索处于长尾的信息。<br>随着信息的快速增长，信息重复和信息过多导致的被动获取的信息过载，通过搜索引擎主动获得高质量的信息也会花费更多的成本，推荐系统是解决这些问题最有潜力的方法，其作用在于：<br></p>
+<ul>
+<li>帮助用户快速发现感兴趣和高质量的信息，提升用户体验。</li>
+<li>增加用户使用产品时间。</li>
+<li>减少用户浏览到重复或者厌恶的信息带来的不利影响。</li>
+<li>提供个性化信息，信息的推荐更为精准。<br>###推荐系统的问题<br>荐系统的基本原理是从数据库中匹配到根据分析用户行为推测出的喜好，根据推荐算法的不同，可以分为以下几种：</li>
+<li>协同过滤系统 <strong>（collaborative filterring）</strong></li>
+<li>基于内容的推荐系统 <strong>（content-based）</strong></li>
+<li>混合推荐系统 <strong>（hybrid）</strong></li>
+<li>基于用户-产品二部图网络结构 <strong>（network-based）</strong><br><br>其中数学公式居多，对于没有技术功底的设计人员来说有些晦涩难懂，个人尝试从产品设计的角度依次从数据、数据外围的产品和用户三个方面去分析，在分析之前需要了解以下问题：<br></li>
+</ul>
+<ol>
+<li>关键元数据。元数据是关于数据的数据，可以用来描述和管理数据，如歌曲的演唱者、所属专辑、发行时间、发行公司和所属类别，《黑白》出自华纳2008年12月发行的方大同专辑《橙月 Orange Moon》。对于推荐系统而言，需要找到影响用户喜好的重要元数据，假设用户是方大同的粉丝，那演唱者是关键的元数据，用户可能还会喜欢此专辑中其他歌曲《小小虫》和《100种表情》，对于喜欢听新歌的用户，发行时间可能更为重要，还有可能因为用户喜欢听R&amp;B。<br><img src="http://woshipm.com/images/20120517/197f_5083289860_1ea54f8d46_b.jpg" alt=""><br><strong>结构化数据</strong><br><img src="http://woshipm.com/images/20120517/9e16_5083289104_7e8b0d7070_b.jpg" alt=""><br><strong>非结构化数据</strong></li>
+<li>结构化和非结构化。元数据之间的结构化的组织（如歌曲的演唱者和演唱者所属的国籍）可以很方便获得，但这些的元数据通常只是关键元数据之一，还有非结构化的元数据（如节奏、声调和音色）也会影响用户的选择，数据之间的隐形联系只能通过大量的分析获得。</li>
+<li>关联性。和用户的行为、背景、特征等相关，分析得出数据之间的规律性特征。常见的如购书网站上，购买了这本书的用户有40%购买了另外一本书。又如通过分析大量消费者的购买单挖掘出的数据关联性，得出啤酒和尿布之间的关联性。</li>
+<li>多样性。关键元数据结构化的强弱影响产品的多样性，比如图书所属的类别复杂度高导致了图书的多样性，而音乐相对单一。产品的多样性意味着数据之间隐性的关联更为复杂，会增加分析的难度，推荐系统也更复杂。</li>
+<li>时效性。数据更新的快慢和用户对新数据的需求影响数据的时效性，如热门论坛中帖子比博客中的文章时效性高。如微博和新闻这样时效性较高的数据要求服务器数据更新要高，时间影响推荐系统的重要数据。数据挖掘注重实时分析，根据用户的每次操作和新的数据的导入提供最新的推荐。<br>googlemusic</li>
+<li>难以明确。要求用户用几个字词明确表述自己喜好什么样的产品是比较难的，用户的喜好会随着时间变化而改变。像Google的音乐推荐，对于大部分普通用户而言，那种节奏和音色选择到自己喜好的音乐会比较困难。推荐系统的意义在于根据用户的历史记录去推测用户的喜好，而不是让用户主动去选择。<br>xiami</li>
+<li>标签。用户添加标签是组织数据的手动解决方法，但是也会导致其他问题：<br>非自动化的解决方法会增加用户操作，难以挖掘数据之间的隐形联系。<br>用户填写标签，由于词语的模糊性会导致标签过多，数据之间的联系会减弱，降低数据之间凝聚力。<br>用户选择推荐的标签，易于理解的词语会导致数据凝聚力过强，导致数据偏向结构化，不利于用户发现感兴趣的内容。</li>
+<li>打分机制。通常是五分制和两分制（喜欢/讨厌），分值越多，用户选择起来越麻烦，需要消除用户评价体系的差异性。用户协同过滤的内容偏向大众化，可以过滤到低质量的内容，但用户对小众化低分数的内容不一定就不感兴趣。通过调查问卷的方式，用户会选择每道题，而通过网络非强制性打分，用户不喜欢的内容很有可能不打分或者直接跳到下一个数据。</li>
+</ol>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/12/31/算法排序/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          排序算法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/12/31/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="recommendersystems" data-title="推荐系统概述" data-url="http://heller-he.github.io/2015/12/31/recommendersystems/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 John Doe
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
